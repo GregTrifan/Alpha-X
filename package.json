@@ -10,7 +10,25 @@
     "next-app:dev":"yarn workspace @alpha-c/next-app dev",
     "next-app:start":"yarn workspace @alpha-c/next-app start",
     "next-app:lint":"yarn workspace @alpha-c/next-app lint",
-    "next-app:build":"yarn workspace @alpha-c/next-app build"
+    "next-app:build":"yarn workspace @alpha-c/next-app build",
+    "chain": "yarn workspace @alpha-c/hardhat chain",
+    "fork": "yarn workspace @alpha-c/hardhat fork",
+    "node": "yarn workspace @alpha-c/hardhat chain",
+    "test": "yarn workspace @alpha-c/hardhat test",
+    "compile": "yarn workspace @alpha-c/hardhat compile",
+    "deploy": "yarn workspace @alpha-c/hardhat deploy",
+    "verify": "yarn workspace @alpha-c/hardhat verify",
+    "watch": "yarn workspace @alpha-c/hardhat watch",
+    "accounts": "yarn workspace @alpha-c/hardhat accounts",
+    "balance": "yarn workspace @alpha-c/hardhat balance",
+    "send": "yarn workspace @alpha-c/hardhat send",
+    "generate": "yarn workspace @alpha-c/hardhat generate",
+    "account": "yarn workspace @alpha-c/hardhat account",
+    "mineContractAddress": "cd packages/hardhat && npx hardhat mineContractAddress",
+    "wallet": "cd packages/hardhat && npx hardhat wallet",
+    "fundedwallet": "cd packages/hardhat && npx hardhat fundedwallet",
+    "flatten": "cd packages/hardhat && npx hardhat flatten",
+    "clean": "cd packages/hardhat && npx hardhat clean"
   },
   "workspaces": {
     "packages": [
