@@ -1,0 +1,28 @@
+{
+  "name": "alpha-c",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/TheSlayer-666/Alpha-C.git",
+  "author": "Trifan Grigore-Gabriel <trifangaby71@protonmail.com>",
+  "license": "MIT",
+  "private":true,
+  "scripts": {
+    "next-app:dev":"yarn workspace @alpha-c/next-app dev",
+    "next-app:start":"yarn workspace @alpha-c/next-app start",
+    "next-app:lint":"yarn workspace @alpha-c/next-app lint",
+    "next-app:build":"yarn workspace @alpha-c/next-app build"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/@graphprotocol/graph-ts",
+      "**/@graphprotocol/graph-ts/**",
+      "**/hardhat",
+      "**/hardhat/**",
+      "**/hardhat-ts",
+      "**/hardhat-ts/**"
+    ]
+  }
+}
