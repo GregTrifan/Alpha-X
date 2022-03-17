@@ -11,10 +11,12 @@
     "next-app:start":"yarn workspace @alpha-c/next-app start",
     "next-app:lint":"yarn workspace @alpha-c/next-app lint",
     "next-app:build":"yarn workspace @alpha-c/next-app build",
+    "build": "yarn workspace @alpha-c/next-app build",
     "chain": "yarn workspace @alpha-c/hardhat chain",
     "fork": "yarn workspace @alpha-c/hardhat fork",
     "node": "yarn workspace @alpha-c/hardhat chain",
     "test": "yarn workspace @alpha-c/hardhat test",
+    "start": "yarn workspace @alpha-c/next-app start",
     "compile": "yarn workspace @alpha-c/hardhat compile",
     "deploy": "yarn workspace @alpha-c/hardhat deploy",
     "verify": "yarn workspace @alpha-c/hardhat verify",
@@ -28,7 +30,19 @@
     "wallet": "cd packages/hardhat && npx hardhat wallet",
     "fundedwallet": "cd packages/hardhat && npx hardhat fundedwallet",
     "flatten": "cd packages/hardhat && npx hardhat flatten",
-    "clean": "cd packages/hardhat && npx hardhat clean"
+    "clean": "cd packages/hardhat && npx hardhat clean",
+    "run-graph-node": "yarn workspace @alpha-c/services run-graph-node",
+    "remove-graph-node": "yarn workspace @alpha-c/services remove-graph-node",
+    "clean-graph-node": "yarn workspace @alpha-c/services clean-graph-node",
+    "graph-prepare": "mustache packages/subgraph/config/config.json packages/subgraph/src/subgraph.template.yaml > packages/subgraph/subgraph.yaml",
+    "graph-codegen": "yarn workspace @alpha-c/subgraph graph codegen",
+    "graph-build": "yarn workspace @alpha-c/subgraph graph build",
+    "graph-create-local": "yarn workspace @alpha-c/subgraph graph create --node http://localhost:8020/ scaffold-eth/your-contract",
+    "graph-remove-local": "yarn workspace @alpha-c/subgraph graph remove --node http://localhost:8020/ scaffold-eth/your-contract",
+    "graph-deploy-local": "yarn workspace @alpha-c/subgraph graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 scaffold-eth/your-contract",
+    "graph-ship-local": "yarn graph-prepare && yarn graph-codegen && yarn graph-deploy-local",
+    "deploy-and-graph": "yarn deploy && yarn graph-ship-local"
+    
   },
   "workspaces": {
     "packages": [
