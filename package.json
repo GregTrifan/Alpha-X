@@ -8,7 +8,6 @@
   "private":true,
   "scripts": {
     "next-app:dev":"yarn workspace @alpha-c/next-app dev",
-    "next-app:start":"yarn workspace @alpha-c/next-app start",
     "next-app:lint":"yarn workspace @alpha-c/next-app lint",
     "next-app:build":"yarn workspace @alpha-c/next-app build",
     "build": "yarn workspace @alpha-c/next-app build",
@@ -16,7 +15,7 @@
     "fork": "yarn workspace @alpha-c/hardhat fork",
     "node": "yarn workspace @alpha-c/hardhat chain",
     "test": "yarn workspace @alpha-c/hardhat test",
-    "start": "yarn workspace @alpha-c/next-app start",
+    "start": "yarn workspace @alpha-c/next-app dev",
     "compile": "yarn workspace @alpha-c/hardhat compile",
     "deploy": "yarn workspace @alpha-c/hardhat deploy",
     "verify": "yarn workspace @alpha-c/hardhat verify",
