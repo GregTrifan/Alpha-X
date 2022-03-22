@@ -1,6 +1,6 @@
 import { Box, Button, Typography } from "@mui/material";
 import { css } from "@emotion/react";
-import { Wallet } from "phosphor-react";
+import WalletButton from "./WalletButton";
 const Heading = () => {
   return (
     <Box
@@ -13,16 +13,7 @@ const Heading = () => {
       `}
     >
       <Typography variant="h4">Alpha-C</Typography>
-      <Button
-        variant="contained"
-        color="primary"
-        startIcon={<Wallet />}
-        css={css`
-          border-radius: 40px;
-        `}
-      >
-        Connect Wallet
-      </Button>
+      <WalletButton />
     </Box>
   );
 };
