@@ -35,7 +35,7 @@ const WalletOptions = (props: Props) => {
           width: 60vh;
           background-color: whitesmoke;
 
-          border-radius: 12px;
+          border-radius: 14px;
           max-width: 600px;
           text-align: center;
           margin-left: 2px;
@@ -62,6 +62,7 @@ const WalletOptions = (props: Props) => {
                 disabled={!c.ready || connectDataLoading}
                 css={css`
                   margin: 4px;
+                  text-transform: none;
                   border-radius: 6px;
                   font-size: x-large;
                 `}

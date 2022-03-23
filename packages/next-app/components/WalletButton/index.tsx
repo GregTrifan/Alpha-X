@@ -12,7 +12,10 @@ const WalletButton = () => {
     setAnchorEl(event.currentTarget);
   };
 
-  const [{ data: accountData, loading: accountLoading }] = useAccount({
+  const [
+    { data: accountData, loading: accountLoading },
+    disconnect,
+  ] = useAccount({
     fetchEns: true,
   });
   const [{ data: balanceData, loading: balanceLoading }] = useBalance({
@@ -23,7 +26,7 @@ const WalletButton = () => {
   const loading = (accountLoading || balanceLoading) && !balanceData;
 
   if (loading) return <div>Loading...</div>;
-  if (balanceData)
+  if (accountData)
     return (
       <>
         <Button
@@ -35,7 +38,13 @@ const WalletButton = () => {
             border-radius: 40px;
           `}
         >
-          {accountData?.ens?.name}
+          {accountData?.ens?.name ??
+            accountData?.address.substring(0, 4) +
+              "..." +
+              accountData?.address.substring(
+                accountData?.address.length - 3,
+                accountData?.address.length
+              )}
         </Button>
         <Menu
           open={openMenu}
@@ -67,6 +76,7 @@ const WalletButton = () => {
             }`}
           </Box>
           <MenuItem
+            onClick={disconnect}
             css={css`
               display: flex;
             `}
@@ -76,7 +86,7 @@ const WalletButton = () => {
                 margin-right: 2px;
               `}
             />{" "}
-            Logout
+            Disconnect
           </MenuItem>
         </Menu>
       </>
