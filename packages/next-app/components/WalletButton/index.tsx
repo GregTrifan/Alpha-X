@@ -1,9 +1,19 @@
 import { useState } from "react";
 import { useAccount, useBalance } from "wagmi";
-import { Button, Menu, MenuItem, Box } from "@mui/material";
+import {
+  Button,
+  Menu,
+  MenuItem,
+  Box,
+  CircularProgress,
+  Alert,
+  AlertTitle,
+  IconButton,
+} from "@mui/material";
 import { css } from "@emotion/react";
-import { SignOut, Wallet } from "phosphor-react";
+import { SignOut, Wallet, Copy, X } from "phosphor-react";
 import WalletOptions from "../WalletOptions";
+import toast from "react-hot-toast";
 const WalletButton = () => {
   const [showWalletOptions, setShowWalletOptions] = useState(false);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -24,8 +34,18 @@ const WalletButton = () => {
   });
   const openModal = () => setShowWalletOptions(true);
   const loading = (accountLoading || balanceLoading) && !balanceData;
-
-  if (loading) return <div>Loading...</div>;
+  const copyAddress = () => {
+    if (accountData) navigator.clipboard.writeText(accountData.address);
+    toast.success("Address copied successfully!");
+  };
+  if (loading)
+    return (
+      <CircularProgress
+        css={css`
+          color: whitesmoke;
+        `}
+      />
+    );
   if (accountData)
     return (
       <>
@@ -36,6 +56,7 @@ const WalletButton = () => {
           onClick={handleMenuClick}
           css={css`
             border-radius: 40px;
+            text-transform: none;
           `}
         >
           {accountData?.ens?.name ??
@@ -69,12 +90,26 @@ const WalletButton = () => {
               margin-right: 10px;
               margin-top: 9px;
               margin-bottom: 6px;
+              text-align: center;
             `}
           >
             {`Ξ ${Number(balanceData?.formatted).toFixed(4)} ${
               balanceData?.symbol
             }`}
           </Box>
+          <MenuItem
+            css={css`
+              display: flex;
+            `}
+            onClick={copyAddress}
+          >
+            <Copy
+              css={css`
+                margin-right: 2px;
+              `}
+            />
+            Copy address
+          </MenuItem>
           <MenuItem
             onClick={disconnect}
             css={css`

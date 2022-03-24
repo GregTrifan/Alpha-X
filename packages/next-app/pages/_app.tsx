@@ -7,6 +7,7 @@ import { WalletLinkConnector } from "wagmi/connectors/walletLink";
 import Heading from "../components/heading";
 import { ThemeProvider } from "@mui/material";
 import { theme } from "../theme";
+import { Toaster } from "react-hot-toast";
 
 
 const infuraId = process.env.NEXT_PUBLIC_INFURA_ID;
@@ -42,6 +43,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider autoConnect connectors={connectors}>
       <ThemeProvider theme={theme}>
+      <Toaster/>
       <div>
         <Heading />
         <Component {...pageProps} />
