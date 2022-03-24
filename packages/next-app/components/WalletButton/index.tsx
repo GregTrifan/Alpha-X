@@ -1,15 +1,6 @@
 import { useState } from "react";
 import { useAccount, useBalance } from "wagmi";
-import {
-  Button,
-  Menu,
-  MenuItem,
-  Box,
-  CircularProgress,
-  Alert,
-  AlertTitle,
-  IconButton,
-} from "@mui/material";
+import { Button, Menu, MenuItem, Box, CircularProgress } from "@mui/material";
 import { css } from "@emotion/react";
 import { SignOut, Wallet, Copy, X } from "phosphor-react";
 import WalletOptions from "../WalletOptions";
