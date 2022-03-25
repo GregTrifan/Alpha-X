@@ -13,6 +13,7 @@ const Networks = () => {
         `}
       >
         {data.chain?.name} {data.chain?.unsupported && "(unsupported)"}
+        {data.chain?.id}
       </div>
 
       {switchNetwork &&

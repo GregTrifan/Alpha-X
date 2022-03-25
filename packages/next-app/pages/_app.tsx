@@ -5,6 +5,7 @@ import { InjectedConnector } from "wagmi/connectors/injected";
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
 import { WalletLinkConnector } from "wagmi/connectors/walletLink";
 import Heading from "../components/heading";
+import Layout from "../components/Layout";
 import { ThemeProvider } from "@mui/material";
 import { theme } from "../theme";
 import { Toaster } from "react-hot-toast";
@@ -40,14 +41,14 @@ type Connector =
   ];
 };
 function MyApp({ Component, pageProps }: AppProps) {
+
   return (
     <Provider autoConnect connectors={connectors}>
       <ThemeProvider theme={theme}>
       <Toaster/>
-      <div>
-        <Heading />
-        <Component {...pageProps} />
-      </div>
+        <Layout>
+          <Component {...pageProps} />
+      </Layout>
     </ThemeProvider>
     </Provider>
   );
