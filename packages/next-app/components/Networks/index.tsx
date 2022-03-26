@@ -31,7 +31,9 @@ const Networks = () => {
             </Button>
           )
         )}
-
+      {switchNetwork && (
+        <Button onClick={() => switchNetwork(80001)}>Switch to Mumbai</Button>
+      )}
       {error && <div>{error?.message}</div>}
     </div>
   );

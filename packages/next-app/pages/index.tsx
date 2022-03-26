@@ -36,7 +36,7 @@ const Home: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Alpha-C</title>
+        <title>Alpha-X</title>
         <meta name="description" content="Project under work" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

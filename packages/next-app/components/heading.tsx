@@ -14,7 +14,7 @@ const Heading = () => {
         padding: 12px;
       `}
     >
-      <Typography variant="h4">Alpha-C</Typography>
+      <Typography variant="h4">Alpha-X</Typography>
       <Box>{networkName}</Box>
       <WalletButton />
     </Box>
